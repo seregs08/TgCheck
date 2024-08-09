@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}Проверка ТГ каналов{% endblock %}
+
+{% block body %}
+
+    <h1>Проверка каналов</h1>
+    
+    <form action="/" method="post">
+        <div class="container">
+            <textarea required id="tg_channel" name="tg_channel" placeholder="Введите список ТГ каналов через запятую, пример: @test_channel1, @test_channel2"></textarea>
+            
+            <input type="submit" value="Проверить">
+            
+            {% if problem_channel %}
+            <p>Проблемные:</p>
+            <p>{% for para in problem_channel %} <p>{{para}}</p> {% endfor %}</p>
+            {% else %}
+            <p>Каналы не указаны или все в норме</p>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}

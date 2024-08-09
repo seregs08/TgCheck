@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock title%}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        input[type="text"], textarea, button, input[type="submit"] {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px; /* Добавляем небольшой отступ снизу для каждого элемента */
+        }
+        
+        textarea {
+            resize: none;
+            height: 200px;
+        }
+
+        h1, h3, ul {
+            text-align: center; /* Выравнивание по центру */
+            width: 100%; /* Занимает всю ширину родителя */
+        }
+        ul {
+            list-style-type: none; /*Убираем маркеры списка */
+            padding: 0;
+            /* text-align: left; */
+        }
+        
+        ul li {
+            margin-bottom: 10px; /* Добавляем небольшой отступ между элементами списка */
+        }
+        
+        ul li a {
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            color: #007bff; /* Задаем цвет ссылкам, чтобы они выглядели как в Bootstrap */
+        }
+        
+    </style>
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
