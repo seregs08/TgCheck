@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push to Docker Hub
-        run: docker push seregs08/tgchec:latest
+        run: docker push seregs08/tgcheck:latest
 
   deploy:
     runs-on: ubuntu-latest
