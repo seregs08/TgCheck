@@ -33,6 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          port: 50123
           command_timeout: 10m
           script: |
             docker compose -f docker-compose.yml down || true
