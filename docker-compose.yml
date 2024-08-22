@@ -1,6 +1,6 @@
 services:
   flask:
-    build: .
+    image: seregs08/tgcheck:latest
     container_name: tg-check
     restart: on-failure
 
