@@ -36,7 +36,7 @@ jobs:
           port: 50123
           command_timeout: 10m
           script: |
-            docker compose -f docker-compose.yml down || true
+            docker compose -f TgCheck/docker-compose.yml down || true
             docker image rm seregs08/tgcheck:latest
             docker pull seregs08/tgcheck:latest
-            docker compose -f docker-compose.yml up -d
+            docker compose -f TgCheck/docker-compose.yml up -d
