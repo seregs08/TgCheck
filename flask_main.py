@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # Считываем учетные данные
 config = configparser.ConfigParser()
-config.read(f"{os.path.dirname(__file__)}/config.ini") # Временно, переделать под норамльное указание конфига
+config.read(f"{os.path.dirname(os.path.abspath(__file__))}/config.ini") # Временно, переделать под норамльное указание конфига
 
 # Присваиваем значения внутренним переменным
 api_id   = config['Telegram']['api_id']
