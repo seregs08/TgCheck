@@ -29,6 +29,10 @@ jobs:
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
+        env:
+          API_ID: {{ secrets.API_ID }}
+          API_HASH: {{ secrets.API_HASH }}
+          USERNAME: {{ secrets.USERNAME }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}

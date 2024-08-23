@@ -3,9 +3,9 @@ services:
     image: seregs08/tgcheck:latest
     container_name: tg-check
     environment:
-      API_ID: {{ secrets.API_ID }}
-      API_HASH: {{ secrets.API_HASH }}
-      USERNAME: {{ secrets.USERNAME }}
+      API_ID: {{ env.API_ID }}
+      API_HASH: {{ env.API_HASH }}
+      USERNAME: {{ env.USERNAME }}
     restart: on-failure
 
   nginx:
