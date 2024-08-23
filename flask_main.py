@@ -1,6 +1,7 @@
 import re
 import os
 import asyncio
+from dotenv import load_dotenv
 #import configparser
 # класс для работы с сообщениями
 from telethon.tl.functions.messages import GetHistoryRequest
