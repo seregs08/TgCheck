@@ -2,6 +2,10 @@ services:
   flask:
     image: seregs08/tgcheck:latest
     container_name: tg-check
+    environment:
+      API_ID: {{ secrets.API_ID }}
+      API_HASH: {{ secrets.API_HASH }}
+      USERNAME: {{ secrets.USERNAME }}
     restart: on-failure
 
   nginx:

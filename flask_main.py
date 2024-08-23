@@ -1,7 +1,7 @@
 import re
 import os
 import asyncio
-import configparser
+#import configparser
 # класс для работы с сообщениями
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.sync import TelegramClient
@@ -10,13 +10,14 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 # Считываем учетные данные
-config = configparser.ConfigParser()
-config.read(f"{os.path.dirname(os.path.abspath(__file__))}/config.ini") # Временно, переделать под норамльное указание конфига
+#config = configparser.ConfigParser()
+load_dotenv()
+#config.read(f"{os.path.dirname(os.path.abspath(__file__))}/config.ini") # Временно, переделать под норамльное указание конфига
 
 # Присваиваем значения внутренним переменным
-api_id   = config['Telegram']['api_id']
-api_hash = config['Telegram']['api_hash']
-username = config['Telegram']['username']
+api_id   = os.getenv('API_ID')
+api_hash = os.getenv('API_HASH')
+username = os.getenv('USERNAME')
 
 client = TelegramClient(username, api_id, api_hash)
 # client.start()

@@ -2,3 +2,4 @@
 *.session-journal
 config.ini
 .github/
+.env
